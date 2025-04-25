@@ -7,4 +7,4 @@ Flutter Riverpod
 5. create a consumer stateless of consumer statful widget for each view
 6. crearte StateNotifier and StateNotifierProvider inside controller folder
 7. crete a state class inside state folder
-8. create reference object (ref.watch or ref.read) for provider in build method to access the state 
+8. create reference object (ref.watch or ref.read) for provider in build method to access the state # copy

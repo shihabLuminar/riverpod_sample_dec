@@ -9,14 +9,16 @@ class HomeScreenStateNotifier extends StateNotifier<HomeScreenState> {
   HomeScreenStateNotifier() : super(HomeScreenState(count: 0, name: "shihab"));
 
   void onIncrement() {
-    state = state.copyWith(count: state.count! + 1);
+    state = state.copyWith(count: state.count + 1);
   }
 
   void dec() {
-    state = state.copyWith(count: state.count! - 1);
+    state = state.copyWith(count: state.count - 1);
   }
 
   void cahngename() {
     state = state.copyWith(name: "new name");
   }
 }
+
+// done
