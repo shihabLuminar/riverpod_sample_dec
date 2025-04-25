@@ -8,12 +8,33 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counterState = ref.watch(homeScreenProvider) as HomeScreenState;
+    final counterState = ref.watch(homeScreenProvider);
     return Scaffold(
-      body: Center(child: Text(counterState.count.toString())),
+      appBar: AppBar(title: Text(counterState.name ?? "no name")),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              onTap: () {
+                ref.read(homeScreenProvider.notifier).dec();
+              },
+              child: Text(counterState.count.toString()),
+            ),
+
+            IconButton(
+              onPressed: () {
+                ref.read(homeScreenProvider.notifier).cahngename();
+              },
+              icon: Icon(Icons.star),
+            ),
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           ref.read(homeScreenProvider.notifier).onIncrement();
+          // ref.read(homeScreenProvider.notifier).cahngename();
         },
         child: Icon(Icons.add),
       ),

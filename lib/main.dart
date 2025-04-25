@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_sample_dec/presentation/home_screen/view/home_screen.dart';
+import 'package:riverpod_sample_dec/presentation/qotes_screen/view/quotes_screen.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));
@@ -11,6 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomeScreen());
+    return MaterialApp(home: QuotesScreen());
   }
 }

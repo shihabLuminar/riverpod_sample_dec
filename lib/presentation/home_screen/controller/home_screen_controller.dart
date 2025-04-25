@@ -6,11 +6,17 @@ final homeScreenProvider = StateNotifierProvider(
 );
 
 class HomeScreenStateNotifier extends StateNotifier<HomeScreenState> {
-  HomeScreenStateNotifier() : super(HomeScreenState(count: 1000));
+  HomeScreenStateNotifier() : super(HomeScreenState(count: 0, name: "shihab"));
 
   void onIncrement() {
-    int currentcount = state.count!;
-    currentcount++;
-    state = HomeScreenState(count: currentcount);
+    state = state.copyWith(count: state.count! + 1);
+  }
+
+  void dec() {
+    state = state.copyWith(count: state.count! - 1);
+  }
+
+  void cahngename() {
+    state = state.copyWith(name: "new name");
   }
 }
